@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package calendarmanager;
+package calendar.api;
 
 import java.time.LocalDate;
 
@@ -16,4 +16,5 @@ public interface CalendarEvent {
     public LocalDate getStartDate();
     public LocalDate getEndDate();
     public String getCategory();
+    public String getLocation() throws CalendarEventException;
 }
