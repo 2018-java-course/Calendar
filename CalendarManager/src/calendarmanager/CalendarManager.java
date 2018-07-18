@@ -6,7 +6,6 @@
 package calendarmanager;
 
 import calendar.api.CalendarEvent;
-import airshow.util.AirShowDatabase;
 import calendar.api.CalendarEventException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -23,7 +22,10 @@ public class CalendarManager {
      */
     public static void main(String[] args) {
         ArrayList<CalendarEvent> events = new ArrayList();
-        new AirShowDatabase().populate(events);
+        
+        // populate the events ArrayList here...
+        System.out.println("List of my events:");
+        
         events.forEach(e -> System.out.println(e.getTitle()));
 
         events.forEach(e -> {
