@@ -12,5 +12,6 @@ import java.util.ArrayList;
  * @author claudio
  */
 public interface CalendarEventDatabase {
+    // Utility method to quickly populate an array of events
     public void populate(ArrayList<CalendarEvent> events);
 }
