@@ -8,7 +8,9 @@ package calendar.api;
 import java.time.LocalDate;
 
 /**
- *
+ * An event that can be added to a Calendar.
+ * Classes that implement this interfaces can be added to the list of event
+ * of Calendar class
  * @author claudio
  */
 public interface CalendarEvent {
