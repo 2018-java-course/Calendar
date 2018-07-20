@@ -35,3 +35,7 @@ nbdist/
 
 
 # End of https://www.gitignore.io/api/java,netbeans
+/programming/nbproject/private/
+/GarbageCollectorTest/nbproject/private/
+/antiifcampaign/nbproject/private/
+/GestioneEventoTest/nbproject/private/

@@ -1,15 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package calendarmanager;
 
 import calendar.api.CalendarEvent;
-import calendar.api.CalendarEventException;
+import calendar.api.Displayable;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -22,18 +15,28 @@ public class CalendarManager {
      */
     public static void main(String[] args) {
         ArrayList<CalendarEvent> events = new ArrayList();
-        
-        // populate the events ArrayList here...
-        System.out.println("List of my events:");
-        
-        events.forEach(e -> System.out.println(e.getTitle()));
 
-        events.forEach(e -> {
-            try {
-                e.getLocation();
-            } catch (CalendarEventException ex) {
-                Logger.getLogger(CalendarManager.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        });
+        // populate the events ArrayList here...
+        events.add(CalendarEventFactory.makeAirShowEvent());
+        events.add(CalendarEventFactory.makeBeerEvent());
+        events.add(CalendarEventFactory.makeConcertEvent());
+        events.add(CalendarEventFactory.makeFieraEvent());
+
+        System.out.println("List of my events:");
+
+        events.forEach(e -> System.out.println(e.getTitle() + " " + e.getDescription()));
+
+        ArrayList<Displayable> dispEvents = new ArrayList<>();
+        events.forEach(c -> dispEvents.add(c));
+
+        CalendarEventsDisplayTable.display(dispEvents);
+
+//        events.forEach(e -> {
+//            try {
+//                e.getLocation();
+//            } catch (CalendarEventException ex) {
+//                Logger.getLogger(CalendarManager.class.getName()).log(Level.SEVERE, null, ex);
+//            }
+//        });
     }
 }
