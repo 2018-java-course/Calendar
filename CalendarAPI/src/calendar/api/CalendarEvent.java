@@ -26,8 +26,4 @@ public interface CalendarEvent extends Displayable {
 
     public String getLocation() throws CalendarEventException;
 
-    public default int abc() {
-        return 1;
-    }
-
 }
