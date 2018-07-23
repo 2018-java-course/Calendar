@@ -5,6 +5,8 @@
  */
 package calendarmanager;
 
+import FieraDelFumetto.Fiera;
+import FieraDelFumetto.FiereMangement;
 import airshow.AirShow;
 import airshow.AirShowCategory;
 import airshow.util.AirShowDatabase;
@@ -41,11 +43,10 @@ public class CalendarEventFactory {
     }
 
     static CalendarEvent makeFieraEvent() {
-//        return new Fiera.Builder()
-//                .setNomeEvento("Comics")
-//                .setLuogoEvento("Rome")
-//                .build();
-        return null;
+        return new Fiera.Builder()
+                .setNomeEvento("Comics")
+                .setLuogoEvento("Rome")
+                .build();
     }
 
     static CalendarEvent makeConcertEvent() {
@@ -59,9 +60,9 @@ public class CalendarEventFactory {
         new AirShowDatabase().populate(lotsOfevents);
         new concerts.Populator().populate(lotsOfevents);
         new BeerEventManager().populate(lotsOfevents);
-        // fifa
-        // fiera
+        new FiereMangement().populate(lotsOfevents);
 
+        // fifa
     }
 
 }
