@@ -5,13 +5,15 @@
  */
 package calendarmanager;
 
-import FieraDelFumetto.Fiera;
 import airshow.AirShow;
 import airshow.AirShowCategory;
+import airshow.util.AirShowDatabase;
 import calendar.api.CalendarEvent;
 import com.beer.BeerEvent;
+import com.beer.utils.BeerEventManager;
 import concerts.Concert;
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 /**
  *
@@ -39,11 +41,27 @@ public class CalendarEventFactory {
     }
 
     static CalendarEvent makeFieraEvent() {
-        return new Fiera("Comics", "Rome");
+//        return new Fiera.Builder()
+//                .setNomeEvento("Comics")
+//                .setLuogoEvento("Rome")
+//                .build();
+        return null;
     }
 
     static CalendarEvent makeConcertEvent() {
-        return new Concert.Builder().build();
+        return new Concert.Builder()
+                .setLuogo("New York")
+                .setNomeConcerto("Latte e i suoi derivati")
+                .build();
+    }
+
+    static void populate(ArrayList<CalendarEvent> lotsOfevents) {
+        new AirShowDatabase().populate(lotsOfevents);
+        new concerts.Populator().populate(lotsOfevents);
+        new BeerEventManager().populate(lotsOfevents);
+        // fifa
+        // fiera
+
     }
 
 }
